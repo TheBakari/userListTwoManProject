@@ -15,7 +15,7 @@ export const UserCard = (props) => {
                 <span className="card-title">{user.name}</span>
             </div>
             <div className="card-content">
-                <p>email: {user.email}</p>
+                <p>email: {user.hideEmail()}</p>
                 <p>date of birth: {user.date}</p>
             </div>
         </div>
