@@ -16,7 +16,7 @@ export const UserList = (props) => {
                 <img src={user.picture.large} className="avatar" alt="user"/>
                 
             </div>
-            <div className="card-stacked col s-1">
+            <div className="card-stacked col s-1 spanItems">
               <span className="card-title">{user.name}</span>
                 <p><i className="material-icons">email</i><span>email: {user.hideEmail()}</span></p>
                 <p><i className="material-icons">cake</i>date of birth: {user.formatDate()}</p>
