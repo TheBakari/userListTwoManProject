@@ -1,11 +1,16 @@
 .display {
-    margin-top: 50px;
+    margin: 0;
+    border: hsl(0, 13%, 92%) solid 0.1px;
 }
 
 .avatar {
     border-radius: 50%;
-    display: inline;
+    height: 50px;
+    margin-top: 30%;
 }
-.text {
-    display: inline;
+i {
+    line-height:16px;
+font-size:14px;
+vertical-align:middle;
 }
+

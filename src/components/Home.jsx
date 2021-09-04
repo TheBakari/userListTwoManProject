@@ -26,7 +26,8 @@ export const Home = () => {
               `${user.name.first} ${user.name.last}`,
               user.email,
               user.dob,
-              user.picture
+              user.picture,
+              user.gender
             )
         );
         setData(userData);
@@ -39,9 +40,8 @@ export const Home = () => {
 
   return (
     <Fragment>
-      <Header title="React Users" />
-      <button onClick={changeView} >Change</button>
-      <button onClick={fetchData}> Refresh </button>
+      <Header changeView={changeView} fetchData={fetchData} view={view} title="React Users" />
+      
       {view ? <ListView data={data} /> : <UserCards data={data}/>}
       
       <Footer />

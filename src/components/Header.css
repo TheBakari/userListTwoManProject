@@ -1,0 +1,9 @@
+button {
+    background-color: #EE6E73;
+    color: white;
+    border: none;
+    height: 1rem;
+}
+button:active {
+    background-color: #EE6E73;
+}

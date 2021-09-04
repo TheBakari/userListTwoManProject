@@ -10,16 +10,16 @@ export const UserList = (props) => {
   const user = props.userData;
 
   return (
-    <div className="row display">
-        <div className="card-horizontal">
+    <div className={`row display ${user.gender === 'female' ? "red lighten-5" : ""}`}>
+        <div className={`card-horizontal ${user.gender === 'female' ? "red lighten-5" : ""}`}>
             <div className="card-image col s-1">
                 <img src={user.picture.large} className="avatar" alt="user"/>
                 
             </div>
             <div className="card-stacked col s-1">
               <span className="card-title">{user.name}</span>
-                <p>email: {user.hideEmail()}</p>
-                <p>date of birth: {user.formatDate()}</p>
+                <p><i className="material-icons">email</i><span>email: {user.hideEmail()}</span></p>
+                <p><i className="material-icons">cake</i>date of birth: {user.formatDate()}</p>
             </div>
         </div>
     </div>
