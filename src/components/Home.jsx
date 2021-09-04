@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 
 import { UserCards } from "./UserCards";
+import { ListView } from "./ListView";
 import { Header } from "./Header";
 import { Footer } from "./Footer.jsx";
 import { User } from "./user";
@@ -9,7 +10,10 @@ import React from "react";
 export const Home = () => {
   const [data, setData] = useState();
   const [dataCopy, setCopy] = useState();
-  const [view, setView] = useState(true);
+  const [view, setView] = useState(true)
+  const changeView=()=>{
+    setView(!view)
+  }
   const fetchData = () =>
     fetch("https://randomuser.me/api/?results=15")
       .then((response) => {
@@ -36,7 +40,9 @@ export const Home = () => {
   return (
     <Fragment>
       <Header title="React Users" />
-      <UserCards data={data} />
+      <button onClick={changeView} >Change</button>
+      {view ? <ListView data={data} /> : <UserCards data={data}/>}
+      
       <Footer />
     </Fragment>
   );

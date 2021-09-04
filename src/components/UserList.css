@@ -1,0 +1,11 @@
+.display {
+    margin-top: 50px;
+}
+
+.avatar {
+    border-radius: 50%;
+    display: inline;
+}
+.text {
+    display: inline;
+}
