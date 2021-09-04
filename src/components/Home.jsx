@@ -41,6 +41,7 @@ export const Home = () => {
     <Fragment>
       <Header title="React Users" />
       <button onClick={changeView} >Change</button>
+      <button onClick={fetchData}> Refresh </button>
       {view ? <ListView data={data} /> : <UserCards data={data}/>}
       
       <Footer />
