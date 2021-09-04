@@ -8,6 +8,7 @@ export const UserCard = (props) => {
   const user = props.userData;
 
   return (
+    
     <div className="col s4">
         <div className="card">
             <div className="card-image">
@@ -16,7 +17,8 @@ export const UserCard = (props) => {
             </div>
             <div className="card-content">
                 <p>email: {user.hideEmail()}</p>
-                <p>date of birth: {user.date}</p>
+                <p>date of birth: {user.formatDate()}</p>
+                
             </div>
         </div>
     </div>

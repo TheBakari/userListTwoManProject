@@ -19,7 +19,7 @@ export const UserList = (props) => {
             <div className="card-stacked col s-1">
               <span className="card-title">{user.name}</span>
                 <p>email: {user.hideEmail()}</p>
-                <p>date of birth: {user.date}</p>
+                <p>date of birth: {user.formatDate()}</p>
             </div>
         </div>
     </div>
