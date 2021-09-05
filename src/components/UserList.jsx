@@ -5,7 +5,7 @@ import './UserList.css'
 
 export const UserList = (props) => {
   if (!props.userData) {
-    return null;
+    return (<div>NESTO JKLI</div>);
   }
   const user = props.userData;
 

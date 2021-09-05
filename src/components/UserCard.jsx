@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 export const UserCard = (props) => {
   if (!props.userData) {
-    return null;
+    return (<div>NESTO JKLI</div>);
   }
   const user = props.userData;
   
@@ -20,7 +20,7 @@ export const UserCard = (props) => {
             <div className="card-content">
                 <p>email: {user.hideEmail()}</p>
                 <p>date of birth: {user.formatDate()} </p>
-                {console.log(user)}
+               
                 
             </div>
         </div>

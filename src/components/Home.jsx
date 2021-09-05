@@ -9,11 +9,13 @@ import React from "react";
 
 export const Home = () => {
   const [data, setData] = useState();
+  const [prep, setPrep] = useState(false);
   const [dataCopy, setCopy] = useState();
-  const [view, setView] = useState(true)
-  const changeView=()=>{
-    setView(!view)
-  }
+  const [view, setView] = useState(true);
+  const changeView = () => {
+    setView(!view);
+  };
+
   const fetchData = () =>
     fetch("https://randomuser.me/api/?results=15")
       .then((response) => {
@@ -32,18 +34,44 @@ export const Home = () => {
         );
         setData(userData);
         setCopy(userData);
+        setTimeout(() => setPrep(true), 1500);
       });
 
   useEffect(() => {
     fetchData();
   }, []);
 
+  if (prep == false) {
+    return (
+      <Fragment>
+        <Header
+          changeView={changeView}
+          fetchData={fetchData}
+          view={view}
+          title="React Users"
+        />
+        <div class="sk-fold">
+          <div class="sk-fold-cube"></div>
+          <div class="sk-fold-cube"></div>
+          <div class="sk-fold-cube"></div>
+          <div class="sk-fold-cube"></div>
+        </div>
+
+        <Footer />
+      </Fragment>
+    );
+  }
+
   return (
     <Fragment>
-      <Header changeView={changeView} fetchData={fetchData} view={view} title="React Users" />
-      
-      {view ? <ListView data={data} /> : <UserCards data={data}/>}
-      
+      <Header
+        changeView={changeView}
+        fetchData={fetchData}
+        view={view}
+        title="React Users"
+      />
+      {view ? <ListView data={data} /> : <UserCards data={data} />}
+
       <Footer />
     </Fragment>
   );
