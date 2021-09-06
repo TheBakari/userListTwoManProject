@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 export const UserCard = (props) => {
   if (!props.userData) {
-    return (<div>NESTO JKLI</div>);
+    return (<div>No data</div>);
   }
   const user = props.userData;
   

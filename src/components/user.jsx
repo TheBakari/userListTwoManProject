@@ -2,7 +2,7 @@ export class User {
   constructor(name, email, dob, picture, gender) {
     this.name = name;
     this.email = email;
-    this.dob = new Date (dob.date);
+    this.dob = dob;
     this.picture = picture;
     this.gender = gender;
   }
@@ -15,13 +15,14 @@ export class User {
 
 
     formatDate() {
-        const month = this.dob.getMonth();
+      const date = new Date (this.dob.date)
+        const month = date.getMonth();
         
 
-        const day = this.dob.getDate();
+        const day = date.getDate();
         
 
-        const year= this.dob.getFullYear();
+        const year= date.getFullYear();
         
 
         return `${day}.${month}.${year}.`;
